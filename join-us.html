@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Join Our Team</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css">
+    </noscript>
+    <link rel="icon" type="icon" href="images\KE-Icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="styles" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Italianno&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/joinUs.css">
+    <script src="assets/js/join-us.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {  
+            emailjs.init('7grwBDvhs8fquRLwB');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('service_5rek708', 'template_alwqxyc', this)
+                    .then(function () {
+                        alert("Submission Sent!")
+                    }, function (error) {
+                        console.log('Something went wrong.', error);
+                    });
+            });
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <!-- <li><a href="generic.html">Generic Page</a></li>
+				<li><a href="elements.html">Elements Reference</a></li>-->
+                <li><a href="portofolio.html">Elias Khalil</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li class="active"><a href="join-us.html">Join our team</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://wa.me/message/OBILGVIMD5DAE1" class="icon brands alt fa-whatsapp"><span
+                            class="label">Whatsapp</span></a></li>
+                <li><a href="https://www.facebook.com/byeliaskhalil?mibextid=LQQJ4d"
+                        class="icon brands alt fa-facebook"><span class="label">Facebook</span></a>
+                </li>
+                <li><a href="https://www.instagram.com/byeliaskhalil/" class="icon brands alt fa-instagram"><span
+                            class="label">Instagram</span></a>
+                </li>
+            </ul>
+        </nav>
+        <div id="main">
+
+
+            <h2>Join Our Team</h2>
+
+            <form id="contact-form">
+                <div class="row gtr-uniform">
+                    <input type="hidden" name="contact_number">
+                    <div class="col-6 col-12-xsmall">
+                        <p>Full Name</p>
+                        <input type="text" name="user_name" placeholder="Full Name" required>
+                    </div>
+                    <div class="col-6 col-12-xsmall">
+                        <p>Date Of Birth</p>
+                        <input type="date" name="user_dob" placeholder="Date Of Birth" class="button" required>
+                    </div>
+                    <div class="col-12">
+                        <p>Email</p>
+                        <input type="email" name="user_email" placeholder="Email" required>
+                    </div>
+                    <div class="col-6">
+                        <p>Phone Number</p>
+                        <input type="tel" name="user_phone" placeholder="Phone Number" class="button" required>
+                    </div>
+                    <div class="col-12">
+                        <p>Educational Status</p>
+                        <select name="user_status" id="status" required>
+                            <option value="0">Graduated</option>
+                            <option value="1">Student</option>
+                        </select>
+                    </div>
+                    <div id="edu-id"></div>
+                    <div class="col-12">
+                        <p>What's your major?</p>
+                        <select name="user_major" required>
+                            <option value="0">Event Manager</option>
+                            <option value="1">Hotel Management</option>
+                            <option value="2">Food and Beverage Management</option>
+                            <option value="3" selected>Other</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <p>Do you have a car?</p>
+                        <input type="radio" name="user_car" id="car" value="Yes"><label for="car">Yes</label>
+                        <input type="radio" name="user_car" id="noCar" value="No"><label for="noCar">No</label>
+                    </div>
+                    <div class="col-12">
+                        <p>Where do you live?</p>
+                        <input type="text" name="user_live" placeholder="Your answer" required>
+                    </div>
+                    <div class="col-12">
+                        <p>Do you have any previous experience in working in the events industry?</p>
+                        <select name="user_prev" id="prev" required>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+                    <div id="xperience"></div>
+                    <div class="col-12">
+                        <p>Have you ever worked in an event company, please specify which one.</p>
+                        <input type="text" name="user_experience" id="experience" placeholder="Your answer" required>
+                    </div>
+                    <div class="col-12">
+                        <p>Are you interested in freelance projects?</p>
+                        <input type="radio" name="user_intr" id="intr" value="Yes"><label for="intr">Yes</label>
+                        <input type="radio" name="user_intr" id="noIntr" value="No"><label for="noIntr">No</label>
+                    </div>
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><input type="submit" value="Submit" class="primary">
+                            </li>
+                            <li><input type="reset" value="Reset" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </form> -
+            <!-- <form id="contact-form">
+                <input type="hidden" name="contact_number">
+                <label>Name</label>
+                <input type="text" name="user_name">
+                <label>Email</label>
+                <input type="email" name="user_email">
+                <label>Message</label>
+                <textarea name="message"></textarea>
+                <input type="submit" value="Send">
+            </form> -->
+        </div>
+    </div>
+
+</body>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/index.js"></script>
+<script src="assets/js/join-us.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</script>
+
+</html>
