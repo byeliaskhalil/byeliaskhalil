@@ -19,6 +19,23 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Italianno&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap"
 		rel="stylesheet">
+	<!-- Meta Pixel Code -->
+	<script>
+		!function(f,b,e,v,n,t,s)
+		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];
+		s.parentNode.insertBefore(t,s)}(window, document,'script',
+		'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '1376468076605206');
+		fbq('track', 'PageView');
+	</script>
+	<noscript>
+		<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1376468076605206&ev=PageView&noscript=1" />
+	</noscript>
+	<!-- End Meta Pixel Code -->
 </head>
 
 <body class="is-preload">
@@ -34,14 +51,18 @@
 					<div class="carousel-indicators">
 						<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
 							class="active" aria-current="true" aria-label="Slide 1"></button>
-						<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+						<div id="carousel-itemIndicator-2">
+							<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
 							aria-label="Slide 2"></button>
+						</div>
 						<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-							aria-label="Slide 3"></button>
+							aria-label="Slide 3" id="carousel-itemIndicator-3"></button>
 					</div>
 					<div class="carousel-inner" data-ride="carousel">
 						<div class="carousel-item active carousel-image bg-img-1"></div>
-						<div class="carousel-item carousel-image bg-img-2"></div>
+						<div id="carousel-item-2">
+							<div class="carousel-item carousel-image bg-img-2"></div>
+						</div>
 						<div class="carousel-item carousel-image bg-img-3"></div>
 					</div>
 					<div id="logo-container">
