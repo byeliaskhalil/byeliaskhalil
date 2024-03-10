@@ -26,3 +26,16 @@ function scrollThroughUp() {
         console.log("width => 980");
     }
 };
+
+window.onload = function () {
+    let width = screen.width;
+    if (width < 690) {
+        let item = document.getElementById('carousel-item-2');
+        let item2 = document.getElementById('carousel-itemIndicator-3');
+        let itemIndicator = document.getElementById('carousel-itemIndicator-2');
+        item.parentNode.removeChild(item);
+        itemIndicator.parentNode.removeChild(itemIndicator);
+        item2.setAttribute('data-bs-slide-to', '1');
+
+    }
+}
